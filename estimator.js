@@ -23,13 +23,13 @@
     {tick:"10+", label:"10+ years",     key:"2plus"}
   ];
   var CREDIT = [   /* the same ranges as the application's credit question */
-    {tick:"<600", label:"599 and below", band:0},   /* band 0: below 600 */
-    {tick:"600",  label:"600 to 649",    band:1},   /* band 1: 600 to 649 (under the minimum) */
-    {tick:"650",  label:"650 to 679",    band:2},   /* band 2: meets the minimum */
-    {tick:"680",  label:"680 to 699",    band:2},
-    {tick:"700",  label:"700 to 719",    band:3},   /* band 3: strong */
-    {tick:"720",  label:"720 to 739",    band:3},
-    {tick:"740+", label:"740 and above", band:3}
+    {tick:"<600", label:"600 and below", band:0},   /* band 0: below 600 */
+    {tick:"625",  label:"601 to 625",    band:1},   /* band 1: 600 to 649 (under the minimum) */
+    {tick:"650",  label:"626 to 650",    band:2},   /* band 2: meets the minimum */
+    {tick:"675",  label:"651 to 675",    band:2},
+    {tick:"700",  label:"676 to 700",    band:3},   /* band 3: strong */
+    {tick:"725",  label:"701 to 725",    band:3},
+    {tick:"725+", label:"725 and above", band:3}
   ];
   var REVENUE_EDGES = [100000, 250000, 500000, 1000000];   /* revenue bands 0..4 are split at these amounts */
 

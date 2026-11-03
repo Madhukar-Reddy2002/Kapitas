@@ -28,24 +28,15 @@
   --foot-bg:linear-gradient(135deg,#502566 0%,#3C1B50 50%,#642587 100%); --foot-solid:var(--p900); --foot-fg:rgba(255,255,255,.8); --foot-head:#fff;
   --foot-link:rgba(255,255,255,.82); --foot-line:rgba(255,255,255,.16); --foot-legal:rgba(255,255,255,.7); --foot-ring:rgba(255,255,255,.35); --foot-hover:rgba(255,255,255,.14);
 }
-/* DARK THEME ("purple"): one deep purple-black family. The bright purple is kept for buttons, links and highlights.
-   The hero application card stays light on purpose, so it is the brightest thing on the page and keeps drawing the eye. */
-/* dark theme: a lifted plum instead of near-black. Header, hero, offers and footer use the brand purple gradients from the block above; the application card below stays white. */
+/* PURPLE THEME: the page alternates so it is not one block of dark.
+   header + hero + offers = purple | why = light | fit check = purple | reviews = light | questions = purple | footer = deep purple.
+   The page itself uses the light tokens from the first :root block; the two purple sections re-define their own tokens in "PURPLE SECTIONS" at the end of this file. */
 :root[data-theme="purple"]{
-  color-scheme:dark;
-  --bg:#2b1b3f; --surface:#36234d; --surface2:#432c5c; --sec-a:#2b1b3f; --sec-b:#321f47; --lav:#4a3266;
-  --text:#f5f0fa; --muted:#cdbfe0; --border:#5b4676; --chip-border:#a28dc0;
-  --accent-ink:#d9a0ff; --ok:#5fd3a5; --ok-bg:#16402f; --amber:#ffc26b; --amber-bg:#4a3510;
-  --shadow:0 14px 40px rgba(0,0,0,.35);
-  --hero-glow:rgba(173,0,255,.22); --hero-glow2:rgba(255,255,255,.06);
-  --offers-bg:linear-gradient(135deg,#3c1b50,#2b1b3f); --offers-line:rgba(255,255,255,.14);
-  --foot-bg:linear-gradient(135deg,#3c1b50,#2b1b3f); --foot-solid:#2b1b3f;
+  --sec-a:#3c1b50; --sec-b:#4a2766;
+  --offers-bg:linear-gradient(135deg,#3C1B50,#2a1139);
+  --foot-bg:linear-gradient(135deg,#3c1b50,#2a1139); --foot-solid:#2a1139;
 }
-/* the fit check and the questions section stay dark in this theme too: see "DARK THEME: ESTIMATOR + FAQ CONTRAST" at the end of this file */
-:root[data-theme="purple"] .card{
-  --surface:#ffffff; --surface2:#f6f1fa; --text:#1d1b22; --muted:#5d5866; --border:#e3dde9; --chip-border:#cfc7d8; --lav:#f3e9fa;
-  --accent-ink:#7a00b3; --ok:#0f7a55; --ok-bg:#e6f6ef; --amber:#8a5200; --amber-bg:#fff3de; --shadow:0 18px 50px rgba(0,0,0,.32);
-}
+:root[data-theme="purple"] .card{--shadow:0 18px 50px rgba(0,0,0,.32)}
 :root[data-theme="light"]{
   --sec-a:#F7F0FB; --sec-b:#FAFAFB;
   --hdr-bg:#ffffff; --hdr-fg:#2a1139; --hdr-line:#e3dde9; --hdr-ring:#cfc7d8; --hdr-hover:#f1e6f8;
@@ -85,7 +76,7 @@ h2.title{font-size:clamp(22px,2.6vw,30px);line-height:1.15;letter-spacing:-.025e
 .chip{border:1.5px solid var(--chip-border);background:var(--surface2);border-radius:10px;padding:9px 12px;font-weight:600;font-size:15px;cursor:pointer;min-height:44px;text-align:left;transition:border-color .15s,background .15s}
 .chip:hover{border-color:var(--accent)}
 .chip[aria-pressed="true"]{border-color:var(--accent);background:var(--lav);color:var(--accent-ink);font-weight:700;box-shadow:inset 0 0 0 1px var(--accent)}
-.stars{color:#e0b400;letter-spacing:2px}
+.stars{color:#b07a00;letter-spacing:2px}
 @media (max-width:960px){section{padding:32px 0}.sec-head{margin-bottom:16px}}
 
 /* ============ 01 HEADER ============ */
@@ -745,7 +736,6 @@ body.form-mode .card.wide{max-width:980px}
 
 /* ============ 03c WHY IMAGE: soft glow behind the specialist so it sits well on both themes ============ */
 #why .why-media{background:radial-gradient(ellipse at 50% 45%,rgba(173,0,255,.12),transparent 66%)}
-:root[data-theme="purple"] #why .why-media{background:radial-gradient(ellipse at 50% 45%,rgba(173,0,255,.30),transparent 66%)}
 
 /* ============ pill ripple when a category finishes, and the compact "how did you hear about us" ============ */
 .pseg.wave{animation:segpop .6s ease both;animation-delay:calc(var(--w,0) * 40ms)}
@@ -756,91 +746,31 @@ body.form-mode .card.wide{max-width:980px}
 .ref-ok{display:flex;align-items:center;gap:12px;font-size:14.5px;font-weight:600;color:var(--ok);animation:rise .25s ease-out}
 .ref.done h3,.ref.done .refopts,.ref.done .ref-other{display:none}
 
-/* ============ DARK THEME: ESTIMATOR + FAQ CONTRAST ============ */
-/* Keep both sections dark in purple theme and give their content accessible contrast. */
+/* ============ PURPLE SECTIONS (purple theme only): fit check + questions ============
+   These two sections are purple so the page runs purple > light > purple > light > purple.
+   Everything inside reads its colours from these tokens, so text, inputs, tags, links and placeholders keep AA contrast. */
 :root[data-theme="purple"] .fit,
-:root[data-theme="purple"] .qa {
-  color-scheme: dark;
-  --bg: #2b1b3f;
-  --surface: #36234d;
-  --surface2: #432c5c;
-  --text: #f5f0fa;
-  --muted: #cdbfe0;
-  --border: #5b4676;
-  --chip-border: #806b98;
-  --lav: #4a3266;
-  --accent-ink: #e0b3ff;
-  --ok: #75e0b8;
-  --ok-bg: #16402f;
-  --amber: #ffd18a;
-  --amber-bg: #4a3510;
-  --shadow: 0 10px 30px rgba(0,0,0,.28);
+:root[data-theme="purple"] .qa{
+  color-scheme:dark;
+  color:var(--text);
+  --text:#f8f2fd; --muted:#e0d4ef; --accent-ink:#ecccff; --chip-border:#b79fd2;
+  --ok:#86e8c4; --ok-bg:#16513a; --amber:#ffd68f; --amber-bg:#5c3f10;
 }
+:root[data-theme="purple"] .fit{--surface:#4d2a69; --surface2:#5b3680; --border:#7d5ea0; --lav:#643f8c}
+:root[data-theme="purple"] .qa{--surface:#5a3478; --surface2:#684089; --border:#8a6bad; --lav:#724a99}
+:root[data-theme="purple"] .fit-card{box-shadow:0 12px 30px rgba(0,0,0,.28)}
 
-/* Estimator headings, controls, values, ticks and result copy. */
-:root[data-theme="purple"] .fit .title,
-:root[data-theme="purple"] .fit .ctl,
-:root[data-theme="purple"] .fit .fit-result h3,
-:root[data-theme="purple"] .fit .fit-result p {
-  color: var(--text);
-}
-:root[data-theme="purple"] .fit .lede2,
-:root[data-theme="purple"] .fit .hint,
-:root[data-theme="purple"] .fit .ticks,
-:root[data-theme="purple"] .fit .val.idle,
-:root[data-theme="purple"] .fit .rev-field .cur,
-:root[data-theme="purple"] .fit .fr-cta .fine {
-  color: var(--muted);
-}
-:root[data-theme="purple"] .fit .val:not(.idle) {
-  color: var(--accent-ink);
-}
-:root[data-theme="purple"] .fit .rev-field input {
-  color: var(--text);
-}
-:root[data-theme="purple"] .fit .rev-field input::placeholder {
-  color: #b9a8cc;
-  opacity: 1;
-}
-:root[data-theme="purple"] .fit .fit-result[data-state="strong"] p,
-:root[data-theme="purple"] .fit .fit-result[data-state="review"] p {
-  color: var(--text);
-}
+/* inputs, placeholders and focus rings on purple */
+:root[data-theme="purple"] .fit input::placeholder,
+:root[data-theme="purple"] .qa textarea::placeholder{color:#d9cbea;opacity:1}
+:root[data-theme="purple"] .fit :focus-visible,
+:root[data-theme="purple"] .qa :focus-visible{outline-color:#fff}
+:root[data-theme="purple"] .fit input:focus,
+:root[data-theme="purple"] .qa textarea:focus{border-color:#fff;outline-color:rgba(255,255,255,.4)}
 
-/* FAQ questions, answers, Ask box and dynamically generated answers. */
-:root[data-theme="purple"] .qa .title,
-:root[data-theme="purple"] .qa .faq summary,
-:root[data-theme="purple"] .qa .askbox label,
-:root[data-theme="purple"] .qa .a-body,
-:root[data-theme="purple"] .qa .cmp li {
-  color: var(--text);
-}
-:root[data-theme="purple"] .qa .faq .ans,
-:root[data-theme="purple"] .qa .askbox .intro,
-:root[data-theme="purple"] .qa .askhint,
-:root[data-theme="purple"] .qa .a-q,
-:root[data-theme="purple"] .qa .a-body .disclosure,
-:root[data-theme="purple"] .qa .related b {
-  color: var(--muted);
-}
-:root[data-theme="purple"] .qa .faq summary::after,
-:root[data-theme="purple"] .qa .faq .ans a,
-:root[data-theme="purple"] .qa .a-body a,
-:root[data-theme="purple"] .qa .related .linkbtn {
-  color: var(--accent-ink);
-}
-:root[data-theme="purple"] .qa .askrow textarea {
-  color: var(--text);
-}
-:root[data-theme="purple"] .qa .askrow textarea::placeholder {
-  color: #b9a8cc;
-  opacity: 1;
-}
-:root[data-theme="purple"] .qa .cmp .meets {
-  background: var(--ok-bg);
-  color: var(--ok);
-}
-:root[data-theme="purple"] .qa .cmp .below {
-  background: var(--amber-bg);
-  color: var(--amber);
-}
+/* estimator sliders and result states: the bright accent is too dim on purple, so use light tones */
+:root[data-theme="purple"] .fit .range-bar{background:#8f72b0;opacity:1}
+:root[data-theme="purple"] .fit .range-fill{background:#f0d9ff}
+:root[data-theme="purple"] .fit .fit-result[data-state="likely"]{border-color:#d9a0ff}
+:root[data-theme="purple"] .fit .fit-result[data-state="idle"] .seg i.on,
+:root[data-theme="purple"] .fit .fit-result[data-state="likely"] .seg i.on{background:#f0d9ff}
