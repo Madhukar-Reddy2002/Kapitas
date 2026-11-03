@@ -1,0 +1,53 @@
+diff --git a/styles.css b/styles.css
+index 70af58a..bea129e 100644
+--- a/styles.css
++++ b/styles.css
+@@ -41,14 +41,7 @@
+   --offers-bg:linear-gradient(135deg,#3c1b50,#2b1b3f); --offers-line:rgba(255,255,255,.14);
+   --foot-bg:linear-gradient(135deg,#3c1b50,#2b1b3f); --foot-solid:#2b1b3f;
+ }
+-/* in the dark theme the fit check and the questions section are light, so the page is not dark from top to bottom */
+-:root[data-theme="purple"] .fit,:root[data-theme="purple"] .qa{
+-  color-scheme:light;
+-  --bg:#ffffff; --surface:#ffffff; --surface2:#f7f2fb; --text:#1d1b22; --muted:#5d5866; --border:#ddd2e8; --chip-border:#8e78ae; --lav:#efe4f8;
+-  --accent-ink:#7a00b3; --ok:#0f7a55; --ok-bg:#e6f6ef; --amber:#8a5200; --amber-bg:#fff3de; --shadow:0 10px 30px rgba(42,17,57,.12);
+-}
+-:root[data-theme="purple"] .fit{--sec-a:#efe6f7}
+-:root[data-theme="purple"] .qa{--sec-b:#f4f1f7}
++/* the fit check and the questions section stay dark in this theme too: see "DARK THEME: ESTIMATOR + FAQ CONTRAST" at the end of this file */
+ :root[data-theme="purple"] .card{
+   --surface:#ffffff; --surface2:#f6f1fa; --text:#1d1b22; --muted:#5d5866; --border:#e3dde9; --chip-border:#cfc7d8; --lav:#f3e9fa;
+   --accent-ink:#7a00b3; --ok:#0f7a55; --ok-bg:#e6f6ef; --amber:#8a5200; --amber-bg:#fff3de; --shadow:0 18px 50px rgba(0,0,0,.32);
+@@ -805,6 +798,10 @@ body.form-mode .card.wide{max-width:980px}
+ :root[data-theme="purple"] .fit .rev-field input {
+   color: var(--text);
+ }
++:root[data-theme="purple"] .fit .rev-field input::placeholder {
++  color: #b9a8cc;
++  opacity: 1;
++}
+ :root[data-theme="purple"] .fit .fit-result[data-state="strong"] p,
+ :root[data-theme="purple"] .fit .fit-result[data-state="review"] p {
+   color: var(--text);
+@@ -829,3 +826,21 @@ body.form-mode .card.wide{max-width:980px}
+ :root[data-theme="purple"] .qa .faq summary::after,
+ :root[data-theme="purple"] .qa .faq .ans a,
+ :root[data-theme="purple"] .qa .a-body a,
++:root[data-theme="purple"] .qa .related .linkbtn {
++  color: var(--accent-ink);
++}
++:root[data-theme="purple"] .qa .askrow textarea {
++  color: var(--text);
++}
++:root[data-theme="purple"] .qa .askrow textarea::placeholder {
++  color: #b9a8cc;
++  opacity: 1;
++}
++:root[data-theme="purple"] .qa .cmp .meets {
++  background: var(--ok-bg);
++  color: var(--ok);
++}
++:root[data-theme="purple"] .qa .cmp .below {
++  background: var(--amber-bg);
++  color: var(--amber);
++}

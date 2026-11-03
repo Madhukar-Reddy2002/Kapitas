@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="purple">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Small Business Loans: Fast, Flexible Funding up to $5M | Kapitus</title>
+<meta name="description" content="Explore small business loan options for working capital, equipment, inventory and growth. Compare up to 6 offers, financing up to $5M, with decisions in as little as 4 hours.">
+<meta name="theme-color" content="#3C1B50">
+<meta property="og:title" content="Small Business Loans: Fast, Flexible Funding up to $5M | Kapitus">
+<meta property="og:description" content="Compare up to 6 small business loan offers. Financing up to $5M, with decisions in as little as 4 hours.">
+<meta property="og:type" content="website">
+<!-- Paid-search landing page: uncomment if this URL should stay out of organic search -->
+<!-- <meta name="robots" content="noindex, nofollow"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- FILES: styles.css (look) | site.js (core, reviews, questions, floating UI) | estimator.js (the widget) | form.js (the application form). Images stay as they are: logo.png, purplelogo.png, desktop.png, mobile.png. -->
+<!-- DEFAULT THEME: change "purple" to "light" in the two places below. A visitor's own choice (header button) is remembered. -->
+<script>(function(){var d="purple",t=d;try{t=localStorage.getItem("kap_theme")||d;}catch(e){}document.documentElement.setAttribute("data-theme",t);})();</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<a class="skip" href="#apply">Skip to application</a>
+
+<!-- ##########  SECTION 01: HEADER  (edit only inside this block)  ########## -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Kapitus home"><span class="brand-logo" role="img" aria-label="Kapitus"></span></a>
+    <div class="header-right">
+      <a class="phone" href="tel:+16466307618" aria-label="Call a financing specialist at (646) 630-7618">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span><small>Talk to a specialist</small>(646) 630-7618</span>
+      </a>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to the light theme" title="Switch to the light theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
+      <a class="btn btn-white btn-sm" href="#apply" data-cta data-loc="header" data-start="Apply now" data-continue="Continue application">Apply now</a>
+    </div>
+  </div>
+</header>
+
+<!-- ##########  END SECTION 01  ########## -->
+
+<main id="top">
+
+<!-- ##########  SECTION 02: HERO + APPLICATION CARD  (edit only inside this block)  ########## -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Fast small business loans with flexible terms</h1>
+      <p class="lede">Explore small business loan options for working capital, equipment, inventory and growth. Tell us about your business and see your options in minutes.</p>
+      <div class="quals" role="group" aria-label="Typical qualifications">
+        <div class="quals-title">Typical qualifications</div>
+        <div class="qual"><strong>2+ years</strong><span>in business</span></div>
+        <div class="qual"><strong>650+</strong><span>credit score</span></div>
+        <div class="qual"><strong>$250K+</strong><span>annual revenue</span></div>
+      </div>
+      <a class="hero-link" href="#fit">Not sure you match? Check your fit in 20 seconds</a>
+    </div>
+
+    <div id="apply">
+      <!-- The card is the application. Section 09 (script) renders every screen into #fbody. -->
+      <div class="card" id="card">
+        <div class="fmeta" id="fmeta" hidden>
+          <div class="fm-l"><span class="fcat" id="fcat">Business details</span><span class="fcount" id="fcount"></span></div>
+          <button type="button" class="fclose" id="fclose" aria-label="Close the application to read more. Your progress is saved." title="Close (your progress is saved)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+        </div>
+        <div class="progress" id="fprog" role="progressbar" aria-label="Application progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="5"></div>
+        <div class="fbody" id="fbody"></div>
+        <div class="fnav" id="fnav" hidden>
+          <button type="button" class="btn btn-ghost" id="fback">Go back</button>
+          <button type="button" class="btn btn-primary" id="fnext">Continue</button>
+        </div>
+        <noscript><p class="range-note">Please enable JavaScript to apply here, or call <a href="tel:+16466307618">(646) 630-7618</a>.</p></noscript>
+      </div>
+    </div>
+
+    <div class="hero-proof">
+      <div class="proof">
+        <div><strong>$10 billion</strong><span>in capital provided</span></div>
+        <div><strong>69,000</strong><span>businesses funded</span></div>
+        <div class="google-rating">
+  <strong>4.6 <span class="stars" aria-hidden="true">&#9733;</span></strong>
+  <span>on Google</span>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ##########  END SECTION 02  ########## -->
+
+<!-- ##########  SECTION 02b: OFFER STRIP  (edit only inside this block)  ########## -->
+<section class="offers" aria-label="Small business financing at a glance">
+  <div class="wrap offers-grid">
+    <div class="offer"><span class="o-pre">Compare up to</span><strong>6 offers</strong></div>
+    <div class="offer"><span class="o-pre">Financing up to</span><strong>$5M</strong></div>
+    <div class="offer"><span class="o-pre">Decisions in as little as</span><strong>4 hours</strong></div>
+  </div>
+</section>
+
+<!-- ##########  END SECTION 02b  ########## -->
+
+
+<!-- SECTION 03: WHY KAPITUS -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title">Why small business owners choose Kapitus</h2>
+      <p class="lede2">
+        Loans for small business owners, with a financing specialist beside you.
+      </p>
+    </div>
+
+    <div class="why-grid">
+
+      <!-- Responsive 3D Specialist Image -->
+      <div class="why-media">
+        <picture>
+          <source
+            media="(max-width: 700px)"
+            srcset="mobile.png"
+          >
+          <img
+            src="desktop.png"
+            alt="Kapitus financing specialist with 20 years of experience"
+            class="why-hero-image"
+            loading="lazy"
+            width="1200"
+            height="900"
+          >
+        </picture>
+      </div>
+
+      <!-- Existing Benefits -->
+      <div class="why-list">
+
+        <div class="why-item">
+          <div class="why-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l8 4v5c0 4.5-3.2 8.3-8 9-4.8-.7-8-4.5-8-9V7z"/>
+              <path d="M8.5 12l2.5 2.5 4.5-5"/>
+            </svg>
+          </div>
+          <div>
+            <h3>20+ years of experience</h3>
+            <p>We've been financing small businesses since 2006, with $10 billion provided to 69,000 businesses.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v10M9.5 9.6c0-1 1-1.7 2.5-1.7s2.5.7 2.5 1.7-1 1.6-2.5 1.9-2.5.8-2.5 1.9 1 1.7 2.5 1.7 2.5-.7 2.5-1.7"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Funding from $5K up to $5M</h3>
+            <p>From working capital and daily operations to equipment, inventory and expansion. The amount depends on your business profile.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-ico" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>
+            </svg>
+          </div>
+          <div>
+            <h3>A specialist who's in your corner</h3>
+            <p>You're never left alone with a form. A financing specialist walks you through your options.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ##########  END SECTION 03  ########## -->
+
+<!-- ##########  SECTION 04: FIT CHECK  (edit only inside this block)  ########## -->
+<section class="fit" id="fit">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="title">See how your small business lines up</h2>
+      <p class="lede2">Adjust the inputs and the result updates as you go. No personal details needed.</p>
+    </div>
+    <div class="fit-card">
+      <div class="fit-controls">
+        <div class="ctl">
+          <div class="ctl-top"><span class="lbl" id="tLbl">Time in business</span><span class="val idle" id="tVal">Move the slider</span></div>
+          <div class="range-wrap" id="tWrap" style="--p:0">
+            <div class="range-bar"></div><div class="range-fill"></div>
+            <input type="range" id="tRange" min="0" max="4" step="1" value="0" aria-labelledby="tLbl" aria-valuetext="Not set">
+          </div>
+          <div class="ticks" id="tTicks" aria-hidden="true"></div>
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><label for="revIn">Annual revenue</label><span class="val idle" id="rVal">Enter an amount</span></div>
+          <div class="rev-field"><span class="cur" aria-hidden="true">$</span><input id="revIn" inputmode="numeric" autocomplete="off" placeholder="350,000"></div>
+          <p class="hint">An estimate is fine.</p>
+        </div>
+        <div class="ctl">
+          <div class="ctl-top"><span class="lbl" id="cLbl">Credit score</span><span class="val idle" id="cVal">Move the slider</span></div>
+          <div class="range-wrap" id="cWrap" style="--p:0">
+            <div class="range-bar"></div><div class="range-fill"></div>
+            <input type="range" id="cRange" min="0" max="4" step="1" value="0" aria-labelledby="cLbl" aria-valuetext="Not set">
+          </div>
+          <div class="ticks" id="cTicks" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="fit-result" id="fitResult" data-state="idle" role="status" aria-live="polite">
+        <div class="fr-main">
+          <div class="seg" aria-hidden="true"><i></i><i></i><i></i></div>
+          <h3 id="fTitle">Let’s see where you stand</h3>
+          <p id="fBody">Slide the two sliders and enter your revenue.</p>
+        </div>
+        <div class="fr-cta">
+          <button type="button" class="btn btn-primary" data-cta data-loc="fit" data-start="Start my application" data-continue="Continue your application">Start my application</button>
+          <p class="fine">This isn’t an offer or a credit decision.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ##########  END SECTION 04  ########## -->
+
+<!-- ##########  SECTION 05: REVIEWS CAROUSEL  (edit only inside this block)  ########## -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="rv-head">
+      <div class="sec-head"><h2 class="title" style="margin-bottom:0">The proof is in the ratings</h2></div>
+      <div class="rv-rating"><b>4.6</b><div><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><small>out of 5 on Google, based on 881 reviews</small></div></div>
+    </div>
+    <div class="car" id="car" role="region" aria-roledescription="carousel" aria-label="Customer reviews">
+      <div class="car-track" id="carTrack" tabindex="0"></div>
+      <div class="car-ctl">
+        <div class="dots" id="dots"></div>
+        <div class="car-btns">
+          <button type="button" class="cbtn" id="carPause" aria-pressed="false" aria-label="Pause automatic scrolling"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" id="pauseIco"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+          <button type="button" class="cbtn" id="carPrev" aria-label="Previous reviews"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" class="cbtn" id="carNext" aria-label="Next reviews"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ##########  END SECTION 05  ########## -->
+
+<!-- ##########  SECTION 06: QUESTIONS (FAQ, disclaimer, Ask box)  (edit only inside this block)  ########## -->
+<section class="qa" id="ask">
+  <div class="wrap">
+    <div class="qa-grid">
+      <div class="qa-faq">
+        <h2 class="title">Small business loan questions</h2>
+        <!-- Original FAQ from kapitus.com/flexible-terms-to-meet-business-needs. Keep the wording identical to the source page. -->
+        <div class="faq" id="faqList">
+          <details><summary>What is the minimum credit score for a small business loan financed by Kapitus?</summary>
+            <div class="ans"><p>At this time, the minimum credit score requirement for our small business financing is 650.</p></div></details>
+          <details><summary>How is working with an online lender different than working with a traditional bank?</summary>
+            <div class="ans"><p>There are a variety of reasons that business owners will choose one type of provider over another – and each has its advantages and disadvantages. To further explore the differences, check out <a href="https://kapitus.com/blog/manage-your-money/financing/traditional-bank-vs-alternative-lender-which-is-better-for-your-small-business-kapitus/" target="_blank" rel="noopener">Traditional Bank vs. Alternative Lender</a>.</p></div></details>
+          <details><summary>What other business financing options can I access by working with Kapitus?</summary>
+            <div class="ans">
+              <p>Kapitus can help you explore a full suite of financing products and help you explore all your options at the same time. Did you know that a term loan is not always the best option in every situation? Depending on why you need financing, the speed at which you need it, and terms you would like to see, there are alternative financing products that could be a better fit. Some additional financing options we can help you explore include:</p>
+              <ul><li>Business line of credit.</li><li>Revenue-based financing.</li><li>Equipment financing.</li><li>Invoice factoring.</li><li>Purchase order financing.</li></ul>
+            </div></details>
+        </div>
+      </div>
+      <div class="qa-ask">
+        <div class="askbox">
+          <form id="askForm" novalidate>
+            <label for="askInput">Ask your own question</label>
+            <p class="intro">Describe your situation, for example how long you’ve been in business and your revenue. Answers come only from Kapitus information.</p>
+            <div class="askrow">
+              <textarea id="askInput" rows="3" maxlength="400" placeholder="Example: I have 1.6 years in business and $400K in revenue. Can I still apply?"></textarea>
+              <button type="submit" class="btn btn-primary">Ask</button>
+            </div>
+            <p class="askhint">Please don’t include personal details such as your SSN. For anything we can’t answer here, a specialist is a call away.</p>
+          </form>
+          <div class="answer" id="answer" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+    <p class="disclaimer" id="productDisclaimer" style="max-width:none;margin:28px 0 0;padding-top:18px;border-top:1px solid var(--border);font-size:12.5px;line-height:1.6">Product availability is subject to confirmation of eligibility and underwriting. Products may vary based on credit profile and the state in which your business is located. Certain products may not be available in all states or to all customers. Business loans are made or brokered by Kapitus LLC in California pursuant to California Finance Lenders License No. 60DBO-198798. SBA loans, business lines of credit, invoice factoring, and purchase order financing are offered only by members of Kapitus’s financing network and not by Kapitus directly.</p>
+  </div>
+</section>
+<!-- ##########  END SECTION 06  ########## -->
+
+</main>
+
+<!-- ##########  SECTION 07: FOOTER  (edit only inside this block)  ########## -->
+<footer class="foot" id="fFoot">
+  <div class="foot-curve" aria-hidden="true"><svg viewBox="0 0 1000 100" preserveAspectRatio="none"><path fill="currentColor" d="M0 0h1000v1C1000 19.4 873.3 97.8 500 97 126.7 96.3 .8 19.8 0 0z" style="color:var(--sec-b)"/></svg></div>
+  <div class="wrap">
+    <div class="foot-talk">
+      <h3>Have questions? Let’s talk.</h3>
+      <p>Connect with one of our financing specialists at <a class="tel" href="tel:+16466307618">(646) 630-7618</a>.</p>
+      <a class="btn btn-white" href="#apply" data-cta data-loc="footer" data-start="Get started" data-continue="Continue your application">Get started</a>
+    </div>
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="Kapitus home"><span class="brand-logo" role="img" aria-label="Kapitus"></span></a>
+        <p style="margin:14px 0 0;font-size:15px;max-width:30ch">Providing the best financing solutions for small businesses since 2006.</p>
+        <div class="social">
+          <a href="https://twitter.com/KapitusFinance" target="_blank" rel="noopener" aria-label="Kapitus on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          <a href="https://www.linkedin.com/company/kapitus/" target="_blank" rel="noopener" aria-label="Kapitus on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="9" width="4" height="12" rx="1"/><circle cx="5" cy="5" r="2.2"/><path d="M10 9h3.6v1.7c.6-1.1 1.9-2 3.7-2 3.1 0 3.7 2 3.7 4.7V21h-4v-6.4c0-1.3-.1-2.4-1.6-2.4s-1.8 1.1-1.8 2.4V21h-4z"/></svg></a>
+          <a href="https://www.facebook.com/KapitusFinance/" target="_blank" rel="noopener" aria-label="Kapitus on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2.2C16.6 2.1 15.6 2 14.5 2 12.1 2 10.5 3.4 10.5 6V8H8v3.3h2.5V22H14V11.3h2.7L17 8z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCvZ5ahnMH9jCnN0lP4rRROA" target="_blank" rel="noopener" aria-label="Kapitus on YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+          <a href="https://www.instagram.com/kapitus_financing/" target="_blank" rel="noopener" aria-label="Kapitus on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Discover</h4>
+        <ul>
+          <li><a href="https://kapitus.com/" target="_blank" rel="noopener">Home</a></li>
+          <li><a href="https://kapitus.com/the-kapitus-difference" target="_blank" rel="noopener">Kapitus Difference</a></li>
+          <li><a href="https://kapitus.com/blog" target="_blank" rel="noopener">Resource Center</a></li>
+          <li><a href="https://kapitus.com/success-stories" target="_blank" rel="noopener">Success Stories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a href="https://kapitus.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a></li>
+          <li><a href="https://kapitus.com/terms-of-use" target="_blank" rel="noopener">Terms of Use Agreement</a></li>
+          <li><a href="https://kapitus.com/media-center/leadership" target="_blank" rel="noopener">Leadership Team</a></li>
+          <li><a href="https://kapitus.com/careers/" target="_blank" rel="noopener">Careers</a></li>
+          <li><a href="https://kapitus.com/media-center" target="_blank" rel="noopener">Media Center</a></li>
+          <li><a href="https://kapitus.com/developer-documentation" target="_blank" rel="noopener">Kapitus Partner API</a></li>
+          <li><a href="https://kapitus.com/usa-patriot-act" target="_blank" rel="noopener">USA PATRIOT Act</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://kapitus.com/products-services/business-loans/" target="_blank" rel="noopener">Business Loans</a></li>
+          <li><a href="https://kapitus.com/products-services/sba-loans/" target="_blank" rel="noopener">SBA Loans</a></li>
+          <li><a href="https://kapitus.com/products-services/line-of-credit/" target="_blank" rel="noopener">Line of Credit</a></li>
+          <li><a href="https://kapitus.com/products-services/equipment-financing/" target="_blank" rel="noopener">Equipment Financing</a></li>
+          <li><a href="https://kapitus.com/products-services/revenue-based-financing/" target="_blank" rel="noopener">Revenue Based Financing</a></li>
+          <li><a href="https://kapitus.com/products-services/invoice-factoring/" target="_blank" rel="noopener">Invoice Factoring</a></li>
+          <li><a href="https://kapitus.com/products-services/purchase-order-financing/" target="_blank" rel="noopener">Purchase Order Financing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <div>Copyright 2026 Strategic Funding Source, Inc. All rights reserved. Kapitus and the Kapitus logo are registered trademarks of Strategic Funding Source, Inc. Loans made or brokered in California are either by Kapitus LLC, pursuant to License Number 60DBO-198798, or by Kapitus Equipment Finance LLC, pursuant to License Number 60DBO-210433.</div>
+      <div>Loans may be funded by WebBank. The specific lender will be identified in your agreement.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ##########  END SECTION 07  ########## -->
+
+<!-- ##########  SECTION 08: FLOATING UI  (edit only inside this block)  ########## -->
+<div class="sticky-cta" id="stickyCta"><a class="btn btn-primary" href="#apply" data-cta data-loc="sticky" data-start="Get started" data-continue="Continue your application">Get started</a></div>
+<button type="button" class="to-top" id="toTop" aria-label="Back to top" tabindex="-1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></button>
+
+<!-- ##########  END SECTION 08  ########## -->
+
+<script src="site.js"></script>
+<script src="estimator.js"></script>
+<script src="form.js"></script>
+</body>
+</html>
